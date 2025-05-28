@@ -71,7 +71,7 @@ function createProjectile(x, y, direction) {
     y: y + frameH / 2,
     vx: direction === "right" ? 5 : -5,
     vy: 0,
-    size: 32,        // Размер картинки снаряда
+    size: 16,        // Размер картинки снаряда
     life: 1000,
     created: Date.now(),
     direction: direction  // Добавляем направление для поворота картинки
@@ -235,18 +235,18 @@ function update(dt) {
   let moveX = 0;
   let moveY = 0;
 
-  if (keys["ArrowRight"] || touchControls.right) {
+  if (keys["d"] || keys["D"] || touchControls.right) {
     moveX += 2;
     mage.direction = "right";
   }
-  if (keys["ArrowLeft"] || touchControls.left) {
+  if (keys["a"] || keys["A"] || touchControls.left) {
     moveX -= 2;
     mage.direction = "left";
   }
-  if (keys["ArrowUp"] || touchControls.up) {
+  if (keys["w"] || keys["W"] || touchControls.up) {
     moveY -= 2;
   }
-  if (keys["ArrowDown"] || touchControls.down) {
+  if (keys["s"] || keys["S"] || touchControls.down) {
     moveY += 2;
   }
 
@@ -465,14 +465,14 @@ function draw() {
   );
 
   // UI - ЗДОРОВЬЕ
-  drawHealthBar(20, 20, mage.health, mage.maxHealth, "#00ff00", "Ral");
+  drawHealthBar(20, 20, mage.health, mage.maxHealth, "#00ff00", "Маг");
   drawHealthBar(20, 60, mob.health, mob.maxHealth, "#ff4444", "Pepe Boss");
 
   // Индикатор ярости моба
   if (mob.isEnraged) {
     ctx.fillStyle = "#ff0000";
     ctx.font = "16px Arial";
-    ctx.fillText("f8ck p3p3", 20, 110);
+    ctx.fillText("ЯРОСТЬ!", 20, 110);
   }
 }
 
