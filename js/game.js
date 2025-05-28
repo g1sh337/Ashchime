@@ -71,7 +71,7 @@ function createProjectile(x, y, direction) {
     y: y + frameH / 2,
     vx: direction === "right" ? 5 : -5,
     vy: 0,
-    size: 16,        // Размер картинки снаряда
+    size: 32,        // Размер картинки снаряда
     life: 1000,
     created: Date.now(),
     direction: direction  // Добавляем направление для поворота картинки
@@ -465,14 +465,14 @@ function draw() {
   );
 
   // UI - ЗДОРОВЬЕ
-  drawHealthBar(20, 20, mage.health, mage.maxHealth, "#00ff00", "Маг");
-  drawHealthBar(20, 60, mob.health, mob.maxHealth, "#ff4444", "Pepe Boss");
+  drawHealthBar(20, 20, mage.health, mage.maxHealth, "#00ff00", "RAL");
+  drawHealthBar(20, 60, mob.health, mob.maxHealth, "#ff4444", "P3p3 Boss");
 
   // Индикатор ярости моба
   if (mob.isEnraged) {
     ctx.fillStyle = "#ff0000";
     ctx.font = "16px Arial";
-    ctx.fillText("ЯРОСТЬ!", 20, 110);
+    ctx.fillText("f8ck p3p3!", 20, 110);
   }
 }
 
